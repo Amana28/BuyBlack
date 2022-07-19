@@ -1,3 +1,4 @@
+#import googlemaps
 from flask import Flask, render_template, abort, request  
 import requests
 app = Flask(__name__)
@@ -9,10 +10,13 @@ def index():
 
 @app.route("/", methods=['POST'])
 def get_coords():
-    addy = request.form["address"]
+    a1 = request.form["a1"]
+    a2 = request.form["a2"]
+    a3 = request.form["a3"]
+    full_address = a1 + ", " + a2 + ", " + a3
     params = {
         'key': API_KEY,
-        'address': addy.replace(' ', '+')
+        'address': full_address
     }
     base_url = 'https://maps.googleapis.com/maps/api/geocode/json?'
     response = requests.get(base_url, params=params)
