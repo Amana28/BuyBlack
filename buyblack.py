@@ -1,4 +1,3 @@
-#import googlemaps
 from flask import Flask, render_template, abort, request  
 import requests
 app = Flask(__name__)
