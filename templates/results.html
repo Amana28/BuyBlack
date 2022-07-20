@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Local Schools</title>
+    <title>BuyBlack</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
         integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
@@ -25,15 +25,15 @@
         <h1>Welcome to Buy Black</h1>
         <h2>Type in what type of Black owned Bussiness you would like</h2>
         <input type="text" placeholder="Black Owned">
-        <a class="button" href="{{ url_for('results')}}">Search</a>
+        <a class="button" href="{{ url_for('results') }}">Search</a>
     </div>
     <div class="container">
         <h3>Black Owned (Whatever the user typed)</h3>
         <div id="map" style="width:100%; height:500px;"></div>
     </div>
     <div class="container">
-        {% for result in results %}
-        <p>{{result['name']}}</p>
+        {% for business in businesses %}
+        <p>{{business['name']}}</p>
         {% endfor %}
     </div>
 
