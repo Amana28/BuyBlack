@@ -3,32 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BuyBlack</title>
+    <title>Title</title>
     <style>
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+        .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+       
+        cursor: pointer;
+        
+        }
+        body {
+        background-color: black;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: verdana;
+            font-size: 48px;
+            background-color: green;
+        }
+        p {
+            font-family: verdana;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+        }
+        div { 
+			width: 320px; 
+			height: 400px; 
+			border: 10px solid green; 
+			background: red; 
+            text-align: center;
+		} 
+        .topnav input[type=text] {
+            float: right;
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            border: none;
+            font-size: 17px;
+        }
+
+
 </style>
 </head>
 
 <body>
+    <h1>Welcome to Buy Black</h1>
+    <div>
     <form method="POST">
-        <p>Please Enter your Street Address: <input name="a1"></p>
-        <p>Please Enter your City/Region: <input name="a2"></p>
-        <p>Please Enter your State/Country <input name="a3"></p>
+        <p>Please Enter your Street Address: </p>
+        <input name="a1">
+        <p>Please Enter your City/Region: </p>
+        <input name="a2">
+        <p>Please Enter your State/Country: </p>
+        <input name="a3" class="input">
         <p></p>
-        <input type="submit" class="button"> 
+        <button type="submit"class="button">Submit</button>
         
     </form>
+    </div>
 </body>
 
 </html>

@@ -24,7 +24,12 @@
     <div class="container">
         <h1>Welcome to Buy Black</h1>
         <h2>Type in what type of Black owned Bussiness you would like</h2>
-        <input type="text" placeholder="Black Owned">
+        <label for="Options">Black Owned</label>
+        <select id="options" name="options">
+            <option value="restaurants">Restaurants</option>
+            <option value="barbers">Barber Shops</option>
+            <option value="clothes">Clothing Stores</option>
+        </select>
         <a class="button" href="{{ url_for('results')}}">Search</a>
     </div>
     <div class="container">
