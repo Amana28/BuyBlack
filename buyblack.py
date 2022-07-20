@@ -45,10 +45,10 @@ def results():
     response = requests.get(base_url, params=params)
     data = response.json()
 
-    results = data['results']
+    businesses = data['results']
 
 
-    return render_template('search.html', results = results, latitude = 0, longitude = 0, url = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initMap") 
+    return render_template('results.html', businesses = businesses, latitude = 0, longitude = 0, url = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initMap") 
         
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
