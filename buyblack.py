@@ -8,7 +8,7 @@ LNG = ""
 
 @app.route("/")
 def index():
-    return render_template('addy.html') 
+    return render_template('home.html') 
 
 #search page
 @app.route("/", methods=['POST'])
@@ -32,7 +32,7 @@ def get_coords():
         #print(lat, lng)
     else:
         return "address is invalid"
-    return render_template('index.html', latitude = LAT, longitude = LNG, url = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initMap") 
+    return render_template('search.html', latitude = LAT, longitude = LNG, url = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initMap") 
 
 @app.route("/results")
 def results():
