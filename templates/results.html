@@ -17,6 +17,13 @@
             center: {lat: {{latitude}}, lng:  {{longitude}}},
             zoom: 16
           }); 
+        {% for business in businesses %}
+            new google.maps.Marker({
+                position: {lat: {{business['geometry']['location']['lat']}}, lng:  {{business['geometry']['location']['lng']}}},
+                map,
+                title: "Me",
+            });
+        {% endfor %}
     }
     </script>
 </head>
