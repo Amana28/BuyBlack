@@ -1,13 +1,11 @@
-#import googlemaps
 from flask import Flask, render_template, abort, request, flash
 from forms import GetChoice
 import requests
 app = Flask(__name__)
 app.secret_key = 'development key'
 API_KEY = "AIzaSyBIJAAFKaletYozLcOg413VGAdHqNbJzWY"
-LAT = ""
-LNG = ""
-
+LAT = 0
+LNG = 0
 @app.route("/")
 def index():
     return render_template('home.html') 
@@ -15,6 +13,8 @@ def index():
 #search page
 @app.route("/", methods=['POST','GET'])
 def get_coords():
+    global LAT
+    global LNG
     a1 = request.form["a1"]
     a2 = request.form["a2"]
     a3 = request.form["a3"]
@@ -32,8 +32,6 @@ def get_coords():
         LAT = location['lat']
         LNG = location['lng']
         form = GetChoice()
-        # if form.validate_on_submit():
-        #     return redirect(url_for('results'))
     else:
         return "address is invalid"
     return render_template('search.html', form = form, latitude = LAT, longitude = LNG, url = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initMap") 
@@ -42,11 +40,10 @@ def get_coords():
 def results():
     form = GetChoice()
     choice = form.option.data
-    print(LAT)
     params = {
         'key': 'AIzaSyBIJAAFKaletYozLcOg413VGAdHqNbJzWY',
         'query': "black owned" + choice,
-        'location': '39.1030000, -84.5120160'
+        'location': str(LAT) + ', ' + str(LNG)
     }
     base_url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?'
     response = requests.get(base_url, params=params)
