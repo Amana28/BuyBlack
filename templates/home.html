@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BuyBlack Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     <style>
         .button {
         background-color: #4CAF50;
@@ -14,12 +15,14 @@
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-       
         cursor: pointer;
-        
         }
         body {
-        background-color: black;
+            background-color: #000003;
+            opacity: 1;
+            background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000003 4px ), repeating-linear-gradient( #7d7e9255, #7d7e92 );
+            background-attachment: fixed;
+            background-size: 100% 100%;
         }
         h1 {
             color: white;
@@ -27,6 +30,8 @@
             font-family: verdana;
             font-size: 48px;
             background-color: green;
+            padding: 15px 32px;
+            
         }
         p {
             font-family: verdana;
@@ -40,22 +45,17 @@
 			border: 10px solid green; 
 			background: red; 
             text-align: center;
+            margin: auto;
 		} 
-        .topnav input[type=text] {
-            float: right;
-            padding: 6px;
-            margin-top: 8px;
-            margin-right: 16px;
-            border: none;
-            font-size: 17px;
-        }
+
+        .logo {font-family: 'Pacifico'}
 
 
 </style>
 </head>
 
 <body>
-    <h1>Welcome to Buy Black</h1>
+    <h1>Welcome to <span class="logo">BuyBlack</span> </h1>
     <div>
     <form method="POST">
         <p>Please Enter your Street Address: </p>
