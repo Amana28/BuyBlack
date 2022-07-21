@@ -23,14 +23,12 @@
 <body> 
     <div class="container">
         <h1>Welcome to Buy Black</h1>
-        <h2>Type in what type of Black owned Bussiness you would like</h2>
-        <label for="Options">Black Owned</label>
-        <select id="options" name="options">
-            <option value="restaurants">Restaurants</option>
-            <option value="barbers">Barber Shops</option>
-            <option value="clothes">Clothing Stores</option>
-        </select>
-        <a class="button" href="{{ url_for('results')}}">Search</a>
+        <h2>What are you looking for?</h2>
+        <h3>Black Owned: </h3>
+        <form method="POST" action="/results">
+            {{ form.option(class="form-control") }} 
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
     </div>
     <div class="container">
         <div id="map" style="width:100%; height:500px;"></div>
