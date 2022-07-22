@@ -81,6 +81,7 @@
 		} 
         .form-control {
             width: 30%;
+            height: 100%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -114,11 +115,14 @@
 <body> 
     <div class="container">
         <h1>Welcome to <span class="logo">BuyBlack</span></h1>
-        <h2>Find Other Black Owned businesses</h2>
-        <h3>Black Owned: </h3>
+        <h2>Find Other Black Owned Businesses</h2>
         <form method="POST" action="/results">
-            {{ form.option(class="form-control") }} 
-            {{ form.submit(class="btn-primary") }}
+            <div>
+                <label><h3 style="color:white">Black Owned: </h3></label>
+                {{ form.option(class="form-control") }} 
+                {{ form.submit(class="btn-primary") }}
+            </div>
+            
         </form>
     </div>
     <div class="container">

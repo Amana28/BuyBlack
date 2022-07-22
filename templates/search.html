@@ -50,6 +50,7 @@
 		} 
         .form-control {
             width: 30%;
+            height: 100%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -74,11 +75,14 @@
     <div class="container">
         <h1>Welcome to <span class="logo">BuyBlack</span></h1>
         <h2>What are you looking for?</h2>
-        <h3>Black Owned: 
         <form method="POST" action="/results">
+        <div>
+            <label><h3 style="color:white">Black Owned: </h3></label>
             {{ form.option(class="form-control") }} 
             {{ form.submit(class="btn-primary") }}
-        </form></h3>
+        </div>
+           
+        </form>
     </div>
     <div class="container">
         <div id="map" style="width:100%; height:500px; border-radius:4px;"></div>
