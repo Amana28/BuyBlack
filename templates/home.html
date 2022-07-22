@@ -10,15 +10,23 @@
     </script>
     <style>
         .button {
-        background-color: #4CAF50;
+        background-color: green;
         border: none;
         color: white;
         padding: 15px 32px;
         text-align: center;
+        border-radius: 4px;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
         cursor: pointer;
+        margin:  0;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
         }
         body {
             background-color: #000003;
@@ -41,17 +49,22 @@
             font-size: 20px;
             color: white;
             text-align: center;
+            padding: 25px 10px;
         }
-        div { 
-			width: 320px; 
-			height: 200px; 
-			border: 10px solid green; 
-			background: red; 
-            text-align: center;
-            margin: auto;
-		} 
-
+        div {}
         .logo {font-family: 'Pacifico'}
+        .addy {
+            padding: 10px 10px;
+            font-size: 17px;
+            text-align: center;
+            width: 99%;
+            box-sizing: border-box;
+            border-radius: 4px;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            position: relative;
+        }
 
 
 </style>
@@ -72,8 +85,7 @@
     <div>
     <form method="POST">
         <p>Please Enter your Address: </p>
-        <input id = "input" placeholder = "Enter a place" type = 'text' name="name">
-        <p></p>
+        <input id = "input" class = "addy" placeholder = "Enter a Place" type = 'text' name="name">
         <button type="submit"class="button">Submit</button>
         
     </form>
