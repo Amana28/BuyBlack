@@ -15,10 +15,8 @@ def index():
 def get_coords():
     global LAT
     global LNG
-    a1 = request.form["a1"]
-    a2 = request.form["a2"]
-    a3 = request.form["a3"]
-    full_address = a1 + ", " + a2 + ", " + a3
+    full_address = request.form["name"]
+    print(type(full_address))
     params = {
         'key': API_KEY,
         'address': full_address

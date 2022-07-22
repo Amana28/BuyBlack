@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>BuyBlack Home</title>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIJAAFKaletYozLcOg413VGAdHqNbJzWY&libraries=places&callback=initAutocomplete">
+    </script>
     <style>
         .button {
         background-color: #4CAF50;
@@ -41,7 +44,7 @@
         }
         div { 
 			width: 320px; 
-			height: 400px; 
+			height: 200px; 
 			border: 10px solid green; 
 			background: red; 
             text-align: center;
@@ -52,23 +55,30 @@
 
 
 </style>
+<script>
+    let autocomplete;
+    function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(document.getElementById("input"), 
+        {
+            componentRestrictions: {'country': ['us']},
+            fields: ['plae_id', 'geometry', 'name']
+        });
+    }
+</script>
 </head>
 
 <body>
     <h1>Welcome to <span class="logo">BuyBlack</span> </h1>
     <div>
     <form method="POST">
-        <p>Please Enter your Street Address: </p>
-        <input name="a1">
-        <p>Please Enter your City/Region: </p>
-        <input name="a2">
-        <p>Please Enter your State/Country: </p>
-        <input name="a3" class="input">
+        <p>Please Enter your Address: </p>
+        <input id = "input" placeholder = "Enter a place" type = 'text' name="name">
         <p></p>
         <button type="submit"class="button">Submit</button>
         
     </form>
     </div>
+   
 </body>
 
 </html>
